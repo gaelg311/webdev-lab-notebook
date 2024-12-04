@@ -25,21 +25,47 @@ Calculate the specificity of the rules below.
 
 ```css
 nav .list-item > a {
+    0 IDs
+    1 Class - list-item
+    2 elements - nav, a
+    (0,1,2)
 }
 
 #main::first-letter {
+    1 ID - main
+    0 Classes
+    1 Element - first-letter
+    (1,0,1)
 }
 
 input[type] {
+    0 IDs
+    1 Attribute - Type
+    1 Element - input
+    (0,1,1)
 }
 
 section .main::first-line {
+    0 Ids
+    1 Class - Main
+    2 Elements/Attributes - section, first-line
+    (0,1,2)
 }
 
 nav ul.menu li#first a:not([class='visited']) {
+    1 ID - first
+    2 Class - Menu, 'visited'
+    3 Elements - nav, ul, li, a
+    **Note: The not pseduo-class is not included in specificity,
+    what is included is the element within the brackets
+    (1,2,4)
 }
 
 div ol li ul li ol li ul li a {
+    0 IDs
+    0 Classes
+    10 Elements
+    (0,0,10)
 }
 ```
 
